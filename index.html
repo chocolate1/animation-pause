@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS动画的运行和播放</title>
+  <style >
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .animation{
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      margin: 100px auto;
+      animation: move 2s infinite alternate;
+    }
+    @keyframes move {
+       0%{
+         -webkit-transform: translate(-100px,0);
+         transform: translate(-100px,0);
+       }
+       100%{
+         -webkit-transform: translate(100px,0);
+         transform: translate(100px,0);
+       }
+    }
+    .stop:hover~.animation{
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body>
+  <div class="btn stop">暂停</div>
+  <div class="animation"></div>
+  <script>
+  // let btn=document.querySelector('.btn');
+  // let elem=document.querySelector('.animation');
+  // btn.addEventListener('click',function(){
+  //   let state=elem.style['animationPlayState'];
+  //   if(state==='paused'){
+  //     elem.style['animationPlayState']='running';
+  //     btn.innerText='暂停';
+  //   }else{
+  //     elem.style['animationPlayState']='paused';
+  //     btn.innerText='开始';
+  //
+  //   }
+  // },false);
+  </script>
+</body>
+</html>
